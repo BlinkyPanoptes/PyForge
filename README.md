@@ -9,7 +9,7 @@ PyForge is a static, browser-only learning environment. Python will run in the b
 ES modules need to be served over HTTP (opening `index.html` directly will not work):
 
 ```sh
-python3 -m http.server 8000
+python -m http.server 8000   # use python3 on macOS/Linux
 ```
 
 Then open http://localhost:8000.
