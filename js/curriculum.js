@@ -1,4 +1,4 @@
-// The Python curriculum: modules and lessons. Exercises are added in phase 4.
+// The Python curriculum: modules and lessons. Lesson text and exercises live in content/
 export const modules = [
   {
     id: "python-foundations",
@@ -150,22 +150,4 @@ export const exerciseTypes = [
   { id: "implement", title: "Implement", description: "Write a solution from requirements." },
   { id: "trace", title: "Trace", description: "Predict the output of unfamiliar code." },
   { id: "debug", title: "Debug", description: "Find and repair a defect." },
-  { id: "explain", title: "Explain", description: "Describe why a solution works. Optional." },
-];
-
-export const projects = [
-  {
-    id: "expense-tracker",
-    title: "Command-line Expense Tracker",
-    level: "Beginner",
-    concepts: ["Variables", "loops", "functions", "lists", "files"],
-    summary: "Record expenses, categorise transactions and calculate totals.",
-    requirements: [
-      "Add an expense with an amount and category",
-      "List saved expenses",
-      "Calculate total spending",
-      "Filter expenses by category",
-      "Save and load data from a JSON file",
-    ],
-  },
 ];

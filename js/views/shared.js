@@ -14,7 +14,7 @@ export function statusBadge(lessonId) {
 }
 
 export function moduleCompletion(module) {
-  const done = module.lessons.filter((lesson) => lessonStatus(lesson.id) === "completed").length;
+  const done = module.lessons.filter((lesson) => ["completed", "review"].includes(lessonStatus(lesson.id))).length;
   return Math.round((done / module.lessons.length) * 100);
 }
 

@@ -1,3 +1,4 @@
+import { lessonContent } from "../../content/index.js";
 import { modules, pad } from "../curriculum.js";
 import { escapeHtml } from "../dom.js";
 import { lessonStatus } from "../state.js";
@@ -11,6 +12,7 @@ const filters = [
 
 function matchesFilter(lessonId, filter) {
   if (filter === "all") return true;
+  if (filter === "completed") return ["completed", "review"].includes(lessonStatus(lessonId));
   return lessonStatus(lessonId) === filter;
 }
 
@@ -42,7 +44,7 @@ export function pathView({ query }) {
                   <span>${escapeHtml(lesson.title)}</span>
                   <p>${escapeHtml(lesson.outcome)}</p>
                 </span>
-                <span class="meta">Lesson ${pad(j + 1)}</span>
+                <span class="meta">${lessonContent[lesson.id] ? `${lessonContent[lesson.id].exercises.length} exercises` : "Coming soon"}</span>
                 ${statusBadge(lesson.id)}
               </a>`).join("")}
           </div>

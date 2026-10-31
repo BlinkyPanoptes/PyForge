@@ -38,6 +38,9 @@ export function codeBlock(code, label = "Python example") {
   return `<pre class="code-block" aria-label="${escapeHtml(label)}"><code>${highlightPython(code)}</code></pre>`;
 }
 
-export function upcoming(phase, text) {
-  return `<div class="notice" role="note"><span><strong>Coming in phase ${phase}.</strong> ${text}</span></div>`;
+// Inline formatting for lesson text: `code` and **bold**. Input is escaped first.
+export function inline(text) {
+  return escapeHtml(text)
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
 }
