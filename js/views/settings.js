@@ -12,7 +12,7 @@ export function settingsView() {
           <div class="panel-header">Editor</div>
           <div class="panel-body">
             <div class="field">
-              <label for="font-size"><span class="field-label">Editor font size</span><br /><span class="field-help">Applies to code blocks now and the editor from phase 3.</span></label>
+              <label for="font-size"><span class="field-label">Editor font size</span><br /><span class="field-help">Applies to the code editor and code examples.</span></label>
               <select class="select" id="font-size">
                 ${[12, 13, 14, 16, 18, 20].map((size) => `<option value="${size}" ${size === settings.editorFontSize ? "selected" : ""}>${size}px</option>`).join("")}
               </select>
