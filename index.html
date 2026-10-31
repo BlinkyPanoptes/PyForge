@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="PyForge: a practical Python learning lab. Learn the language, understand the logic, build real things." />
+    <meta name="theme-color" content="#111216" />
+    <title>PyForge</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="app" data-sidebar-open="false">
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#/overview" aria-label="PyForge home">
+          <span class="brand-mark" aria-hidden="true">Py</span>
+          <span class="brand-name">PyForge</span>
+        </a>
+
+        <form class="search" id="search-form" role="search">
+          <label for="search-input" class="visually-hidden">Search lessons and concepts</label>
+          <input id="search-input" type="search" placeholder="Search lessons, concepts..." autocomplete="off" />
+          <kbd aria-hidden="true">/</kbd>
+        </form>
+
+        <nav aria-label="Sections">
+          <ul class="nav">
+            <li><a class="nav-link" data-nav="overview" href="#/overview"><span data-icon="overview"></span>Overview</a></li>
+            <li><a class="nav-link" data-nav="path" href="#/path"><span data-icon="path"></span>Learning path</a></li>
+            <li><a class="nav-link" data-nav="practice" href="#/practice"><span data-icon="practice"></span>Practice lab</a></li>
+            <li><a class="nav-link" data-nav="challenges" href="#/challenges"><span data-icon="challenges"></span>Challenges</a></li>
+            <li><a class="nav-link" data-nav="projects" href="#/projects"><span data-icon="projects"></span>Projects</a></li>
+            <li><a class="nav-link" data-nav="reference" href="#/reference"><span data-icon="reference"></span>Reference library</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="course-label">
+          <p class="sidebar-label" id="course-label">Current course · Python</p>
+          <div id="course-nav"></div>
+        </nav>
+
+        <div class="card" style="padding:var(--space-4);gap:var(--space-2)">
+          <span class="eyebrow">Learning objective</span>
+          <p>Complete your next lesson and solve one independent exercise.</p>
+        </div>
+
+        <div class="sidebar-footer">
+          <ul class="nav">
+            <li><a class="nav-link" data-nav="settings" href="#/settings"><span data-icon="settings"></span>Settings</a></li>
+          </ul>
+        </div>
+      </aside>
+      <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+      <div class="main">
+        <header class="header">
+          <button type="button" class="btn btn-ghost btn-icon menu-button" id="menu-button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><span data-icon="menu"></span></button>
+          <div class="header-title" id="header-title" aria-live="polite"></div>
+          <span class="header-hint">Press <kbd>/</kbd> to search</span>
+        </header>
+        <main class="content" id="main" tabindex="-1"></main>
+      </div>
+    </div>
+    <noscript><p style="padding:24px">PyForge needs JavaScript to run Python in your browser.</p></noscript>
+    <script type="module">
+      import { icon } from "./js/icons.js";
+      document.querySelectorAll("[data-icon]").forEach((el) => (el.outerHTML = icon(el.dataset.icon)));
+    </script>
+  </body>
+</html>

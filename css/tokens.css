@@ -1,0 +1,75 @@
+/* Design tokens: the single source of colors, type, spacing and sizes. */
+:root {
+  /* Surfaces */
+  --color-bg: #111216;
+  --color-surface: #191a20;
+  --color-surface-raised: #22242c;
+  --color-border: #353741;
+
+  /* Text */
+  --color-text: #f0f1f5;
+  --color-text-muted: #a3a6b2;
+
+  /* Accent and status */
+  --color-accent: #c8444d;
+  --color-accent-hover: #d65a63;
+  --color-accent-soft: rgba(200, 68, 77, 0.14);
+  --color-success: #69c59a;
+  --color-warning: #e6b96a;
+  --color-error: #f0787f;
+
+  /* Syntax highlighting: kept separate from UI colors, no reliance on red. */
+  --syntax-keyword: #c792ea;
+  --syntax-string: #a5d6a7;
+  --syntax-number: #f7c97e;
+  --syntax-function: #82aaff;
+  --syntax-comment: #7a7f8e;
+  --syntax-variable: #e6e8ef;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
+
+  /* Spacing: 4px base grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Layout */
+  --sidebar-width: 232px;
+  --header-height: 56px;
+  --content-max: 1080px;
+
+  /* Motion */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+
+  /* Focus */
+  --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+  }
+}

@@ -1,0 +1,119 @@
+/* Header menu button only appears when the sidebar becomes a drawer. */
+.menu-button {
+  display: none;
+}
+
+/* Tablet and below: the sidebar becomes a collapsible drawer. */
+@media (max-width: 1199px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 40;
+    width: min(300px, 86vw);
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+    visibility: hidden;
+  }
+
+  .app[data-sidebar-open="true"] .sidebar {
+    transform: none;
+    visibility: visible;
+  }
+
+  .app[data-sidebar-open="true"] .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: single column, larger touch targets. */
+@media (max-width: 767px) {
+  .header {
+    padding: 0 var(--space-3);
+  }
+
+  .header-hint {
+    display: none;
+  }
+
+  .content {
+    padding: var(--space-6) var(--space-4) var(--space-10);
+  }
+
+  .page {
+    gap: var(--space-6);
+  }
+
+  .page-header h1 {
+    font-size: var(--text-xl);
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .module-row {
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+
+  .module-row .module-progress {
+    grid-column: 2;
+  }
+
+  .module-card summary {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .module-card summary .badge {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .lesson-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-1);
+    padding-left: var(--space-5);
+  }
+
+  .lesson-row .badge {
+    justify-self: start;
+  }
+
+  .field {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn,
+  .nav-link,
+  .lesson-list a {
+    min-height: 44px;
+  }
+
+  .nav-link,
+  .lesson-list a {
+    display: flex;
+    align-items: center;
+  }
+}
